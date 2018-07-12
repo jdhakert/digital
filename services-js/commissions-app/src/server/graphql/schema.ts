@@ -28,7 +28,7 @@ export interface Schema {
 
 export interface Query {
   commissions(args: {
-    policyTypeId: number | undefined;
+    policyTypeIds: number[] | undefined;
     query: string | undefined;
     hasOpenSeats: boolean | undefined;
   }): Commission[];
@@ -45,6 +45,7 @@ export interface PolicyType extends ResolvableWith<DbPolicyType> {
 export interface Commission extends ResolvableWith<DbBoard> {
   id: number;
   name: string;
+  homepageUrl: string | null;
   policyType: PolicyType | null;
   department: Department | null;
   description: string;
@@ -67,7 +68,7 @@ export interface Commission extends ResolvableWith<DbBoard> {
 
 export interface Department extends ResolvableWith<DbDepartment> {
   name: string;
-  homepageUrl: string;
+  homepageUrl: string | null;
 }
 
 export interface Member extends ResolvableWith<DbMember> {
@@ -97,16 +98,18 @@ const caseInsensitiveSearch = (
 const queryRootResolvers: Resolvers<Query, Context> = {
   commissions: async (
     _obj,
-    { policyTypeId, query, hasOpenSeats },
+    { policyTypeIds, query, hasOpenSeats },
     { commissionsDao }
   ) => {
     let commissions = await commissionsDao.fetchBoards();
 
     // typeof checks because all of the args are optional
 
-    if (typeof policyTypeId === 'number') {
+    if (typeof policyTypeIds !== 'undefined') {
       commissions = commissions.filter(
-        ({ PolicyTypeId }) => PolicyTypeId === policyTypeId
+        ({ PolicyTypeId }) =>
+          typeof PolicyTypeId === 'number' &&
+          policyTypeIds.includes(PolicyTypeId)
       );
     }
 
@@ -135,6 +138,7 @@ const queryRootResolvers: Resolvers<Query, Context> = {
 export const commissionResolvers: Resolvers<Commission, Context> = {
   id: ({ BoardID }) => BoardID,
   name: ({ BoardName }) => BoardName || 'Unknown Board',
+  homepageUrl: ({ LinkPath }) => LinkPath,
   description: ({ Description }) => Description || '',
   department: async ({ DepartmentId }, _args, { commissionsDao }) =>
     DepartmentId ? await commissionsDao.fetchDepartment(DepartmentId) : null,
@@ -184,8 +188,7 @@ export const commissionResolvers: Resolvers<Commission, Context> = {
 
 const departmentResolvers: Resolvers<Department, Context> = {
   name: ({ DepartmentName }) => DepartmentName || 'Unknown Department',
-  // TODO(finh): Fill in with actual homepage URL when the DB has it.
-  homepageUrl: () => '',
+  homepageUrl: ({ LinkPath }) => LinkPath,
 };
 
 const policyTypeResolvers: Resolvers<PolicyType, Context> = {

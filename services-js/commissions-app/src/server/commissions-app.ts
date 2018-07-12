@@ -168,9 +168,13 @@ export async function makeServer(port) {
     options: {
       path: `${PATH_PREFIX}/graphql`,
       route: {
-        auth: 'apiHeaderKeys',
+        auth: process.env.API_KEYS ? 'apiHeaderKeys' : false,
         cors: {
-          origin: ['localhost', '*.boston.gov'],
+          origin: [
+            'http://localhost:*',
+            'https://localhost:*',
+            'https://*.boston.gov',
+          ],
           additionalHeaders: ['X-API-KEY'],
         },
       },
