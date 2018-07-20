@@ -26,7 +26,7 @@ export function makeRoutesForNextApp(
   app: next.Server,
   pathPrefix: string
 ): ServerRoute[] {
-  if (!pathPrefix.match(/^\/.*\/$/)) {
+  if (pathPrefix !== '/' && !pathPrefix.match(/^\/.*\/$/)) {
     throw new Error(
       `Path prefix "${pathPrefix}" must begin and end with a '/' character`
     );
@@ -43,7 +43,7 @@ export function makeRoutesForNextApp(
 
   const requestHandler = app.getRequestHandler();
 
-  return [
+  const routes: ServerRoute[] = [
     {
       path: `${pathPrefix}{p*}`,
       method: ['GET', 'POST'],
@@ -58,6 +58,9 @@ export function makeRoutesForNextApp(
     {
       path: `${assetPrefix}_next/{p*}`,
       method: 'GET',
+      options: {
+        auth: false,
+      },
       handler: async ({ raw: { req, res }, params }, h) => {
         // Next always expects its "_next" stuff to be mounted at "/", so we
         // pass a custom URL that emulates that.
@@ -66,4 +69,6 @@ export function makeRoutesForNextApp(
       },
     },
   ];
+
+  return routes;
 }
