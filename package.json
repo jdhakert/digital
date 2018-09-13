@@ -1,24 +1,22 @@
 {
-  "name": "commissions",
-  "description": "Boards and Commissions server",
+  "name": "digital",
+  "description": "Boston Digital Team monorepo",
   "version": "0.0.0",
   "license": "CC0-1.0",
   "private": true,
   "engines": {
-    "node": "^8.0.0",
     "yarn": "^1.6.0"
   },
   "workspaces": {
     "packages": [
-      "modules-js/*",
       "services-js/*",
+      "services-ruby/*",
+      "modules-js/*",
       "templates/js-*",
       "templates/js-*/build/*"
     ],
     "nohoist": [
-      "**/@cityofboston/config-*",
-      "**/knex",
-      "**/@rmp135/sql-ts"
+      "**/@cityofboston/config-*"
     ]
   },
   "scripts": {
@@ -45,7 +43,7 @@
     "lerna": "^3.0.0-beta",
     "lint-staged": "^7.0.4",
     "prettier": "^1.12.0",
-    "typescript": "^2.8.1",
-    "typescript-eslint-parser": "^14.0.0"
+    "typescript": "^3.0.0",
+    "typescript-eslint-parser": "^17.0.0"
   }
 }

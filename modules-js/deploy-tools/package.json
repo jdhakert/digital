@@ -12,14 +12,16 @@
     "test": "jest --passWithNoTests"
   },
   "bin": {
-    "travis-js-service-deploy": "bin/travis-js-service-deploy.js"
+    "travis-service-deploy": "bin/travis-service-deploy.js"
   },
   "jest": {
     "preset": "@cityofboston/config-jest-typescript"
   },
   "dependencies": {
+    "@slack/client": "^4.3.1",
     "aws-sdk": "^2.245.1",
     "date-fns": "^1.29.0",
+    "minimist": "^1.2.0",
     "shelljs": "^0.8.2",
     "tar": "^4.4.3"
   },
@@ -28,12 +30,13 @@
     "@cityofboston/config-typescript": "^0.0.0",
     "@types/aws-sdk": "^2.7.0",
     "@types/jest": "^22.0.0",
+    "@types/minimist": "^1.2.0",
     "@types/node": "^10.0.0",
     "@types/shelljs": "^0.8.0",
     "jest": "^22.4.0",
     "rimraf": "^2.6.2",
     "ts-jest": "^22.0.0",
-    "tsc-watch": "^1.0.21",
-    "typescript": "^2.8.1"
+    "tsc-watch": "^1.0.26",
+    "typescript": "^3.0.0"
   }
 }

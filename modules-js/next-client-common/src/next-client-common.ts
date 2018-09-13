@@ -1,10 +1,33 @@
 import fetch from 'isomorphic-fetch';
 import getConfig from 'next/config';
-import { IncomingMessage } from 'http';
+import { IncomingMessage, ServerResponse } from 'http';
+
+export { default as RouterListener } from './RouterListener';
+export * from './RouterListener';
 
 export const API_KEY_CONFIG_KEY = 'graphqlApiKey';
 export const HAPI_INJECT_CONFIG_KEY = 'graphqlHapiInject';
 export const GRAPHQL_PATH_KEY = 'graphqlPath';
+
+export interface NextContext<Req> {
+  query: { [key: string]: string };
+  req?: Req;
+  resp?: ServerResponse;
+}
+
+export interface PublicRuntimeConfig {
+  [API_KEY_CONFIG_KEY]: string;
+  [GRAPHQL_PATH_KEY]: string;
+}
+
+export interface ServerRuntimeConfig {
+  [HAPI_INJECT_CONFIG_KEY]: Function;
+}
+
+export interface RuntimeConfig {
+  publicRuntimeConfig: PublicRuntimeConfig;
+  serverRuntimeConfig: ServerRuntimeConfig;
+}
 
 export type QueryVariables = { [key: string]: any };
 
@@ -57,11 +80,10 @@ function handleGraphqlResponse<T>(
 }
 
 async function clientFetchGraphql<T>(
+  { publicRuntimeConfig }: RuntimeConfig,
   query,
   variables: QueryVariables | null = null
 ): Promise<T> {
-  const { publicRuntimeConfig } = getConfig();
-
   const headers = {
     Accept: 'application/json',
     'Content-Type': 'application/json',
@@ -94,11 +116,11 @@ async function clientFetchGraphql<T>(
 }
 
 async function serverFetchGraphql<T>(
+  { publicRuntimeConfig, serverRuntimeConfig }: RuntimeConfig,
+  parentRequest: IncomingMessage | undefined,
   query: string,
-  variables: QueryVariables | null = null
+  variables: QueryVariables | null
 ): Promise<T> {
-  const { publicRuntimeConfig, serverRuntimeConfig } = getConfig();
-
   const headers = {};
 
   if (publicRuntimeConfig && publicRuntimeConfig[API_KEY_CONFIG_KEY]) {
@@ -109,6 +131,10 @@ async function serverFetchGraphql<T>(
     throw new Error(
       `Hapi inject not found in server config at ${HAPI_INJECT_CONFIG_KEY}`
     );
+  }
+
+  if (parentRequest) {
+    headers['Cookie'] = parentRequest.headers.cookie;
   }
 
   const hapiInject = serverRuntimeConfig[HAPI_INJECT_CONFIG_KEY];
@@ -144,6 +170,8 @@ async function serverFetchGraphql<T>(
  *
  * @param query GraphQL query string
  * @param variables Optional hash of variable values
+ * @param parentRequest The HTTP request from server-side rendering. Used to
+ * pass cookies along.
  *
  * @throws Error, GraphqlError
  */
@@ -151,10 +179,28 @@ export function fetchGraphql<T>(
   query: string,
   variables: QueryVariables | null = null
 ): Promise<T> {
+  const runtimeConfig: RuntimeConfig = getConfig();
+
   if ((process as any).browser) {
-    return clientFetchGraphql<T>(query, variables);
+    return clientFetchGraphql<T>(runtimeConfig, query, variables);
   } else {
-    return serverFetchGraphql<T>(query, variables);
+    return serverFetchGraphql<T>(runtimeConfig, undefined, query, variables);
+  }
+}
+
+export type FetchGraphql = (
+  query: string,
+  variables?: QueryVariables
+) => Promise<any>;
+
+export function makeFetchGraphql(
+  runtimeConfig: RuntimeConfig,
+  parentRequest?: IncomingMessage
+): FetchGraphql {
+  if ((process as any).browser) {
+    return clientFetchGraphql.bind(null, runtimeConfig);
+  } else {
+    return serverFetchGraphql.bind(null, runtimeConfig, parentRequest);
   }
 }
 

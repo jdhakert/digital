@@ -1,6 +1,11 @@
 import url from 'url';
 import next from 'next';
-import { ServerRoute } from 'hapi';
+import { Server as HapiServer, ServerRoute, RouteOptions } from 'hapi';
+import { IncomingMessage } from 'http';
+
+export interface ExtendedIncomingMessage extends IncomingMessage {
+  payload: any;
+}
 
 /**
  * Makes a Hapi route object to render the Next app from the given module at the
@@ -24,7 +29,9 @@ import { ServerRoute } from 'hapi';
  */
 export function makeRoutesForNextApp(
   app: next.Server,
-  pathPrefix: string
+  pathPrefix: string,
+  pageRouteOptions: RouteOptions | ((server: HapiServer) => RouteOptions) = {},
+  staticRouteOptions: RouteOptions | ((server: HapiServer) => RouteOptions) = {}
 ): ServerRoute[] {
   if (pathPrefix !== '/' && !pathPrefix.match(/^\/.*\/$/)) {
     throw new Error(
@@ -43,23 +50,25 @@ export function makeRoutesForNextApp(
 
   const requestHandler = app.getRequestHandler();
 
+  // Next does not handle POSTs by default. We add this route so that it will
+  // pass them in the normal render pipeline.
+  app.router.add('POST', '/:path*', (req, res, _params, parsedUrl) =>
+    app.render(req, res, parsedUrl.pathname, parsedUrl.query, parsedUrl)
+  );
+
   const routes: ServerRoute[] = [
     {
       path: `${pathPrefix}{p*}`,
       method: ['GET', 'POST'],
-      handler: async ({ raw: { req, res } }, h) => {
-        // Our actual pages are mounted at their expected paths (e.g.
-        // /commissions/apply in the commissions app, not /apply) so we don’t
-        // need to do any URL transforming.
-        await requestHandler(req, res);
-        return h.close;
-      },
+      handler: makeNextHandler(app),
+      options: pageRouteOptions,
     },
     {
       path: `${assetPrefix}_next/{p*}`,
       method: 'GET',
       options: {
         auth: false,
+        ...staticRouteOptions,
       },
       handler: async ({ raw: { req, res }, params }, h) => {
         // Next always expects its "_next" stuff to be mounted at "/", so we
@@ -71,4 +80,24 @@ export function makeRoutesForNextApp(
   ];
 
   return routes;
+}
+
+export function makeNextHandler(app: next.Server) {
+  const requestHandler = app.getRequestHandler();
+
+  return async (request, h) => {
+    const {
+      raw: { req, res },
+    } = request;
+
+    // Pass any Hapi payload along so we can handle form POSTs in
+    // getInitialProps if we want to.
+    (req as ExtendedIncomingMessage).payload = request.payload;
+
+    // Our actual pages are mounted at their expected paths (e.g.
+    // /commissions/apply in the commissions app, not /apply) so we don’t
+    // need to do any URL transforming.
+    await requestHandler(req, res);
+    return h.close;
+  };
 }

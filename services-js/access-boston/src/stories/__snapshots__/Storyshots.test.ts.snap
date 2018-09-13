@@ -1,26 +1,2335 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots IndexPage default 1`] = `
+exports[`Storyshots AccessBostonHeader default 1`] = `
 <div
-  className="mn"
+  className="css-1gni7w7 p-a200"
 >
-  <div
-    className="b b-c"
+  <h1
+    className="css-e3scnp"
   >
-    <div
-      className="sh"
+    <a
+      href="/"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
     >
-      <h2
-        className="sh-title"
+      Access Boston
+    </a>
+  </h1>
+  <div
+    className="css-n9ftlz"
+  >
+    <span
+      style={
+        Object {
+          "marginRight": "1em",
+        }
+      }
+    >
+      CON01234
+    </span>
+    <form
+      action="/logout"
+      method="POST"
+    >
+      <input
+        name="crumb"
+        type="hidden"
+        value=""
+      />
+      <button
+        className="btn btn--sm btn--100"
       >
-        Access Boston
-      </h2>
-    </div>
-    <pre>
-      {
-  "name": "CON01234"
-}
-    </pre>
+        Logout
+      </button>
+    </form>
   </div>
 </div>
+`;
+
+exports[`Storyshots ChangePasswordPage default 1`] = `
+Array [
+  <div
+    className="css-1gni7w7 p-a200"
+  >
+    <h1
+      className="css-e3scnp"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "inherit",
+          }
+        }
+      >
+        Access Boston
+      </a>
+    </h1>
+    <div
+      className="css-n9ftlz"
+    >
+      <span
+        style={
+          Object {
+            "marginRight": "1em",
+          }
+        }
+      >
+        CON01234
+      </span>
+      <form
+        action="/logout"
+        method="POST"
+      >
+        <input
+          name="crumb"
+          type="hidden"
+          value=""
+        />
+        <button
+          className="btn btn--sm btn--100"
+        >
+          Logout
+        </button>
+      </form>
+    </div>
+  </div>,
+  <div
+    className="mn css-1jubgvi"
+  >
+    <div
+      className="b b-c b-c--hsm"
+    >
+      <div
+        className="sh m-b300"
+      >
+        <h2
+          className="sh-title"
+        >
+          Change Password
+        </h2>
+      </div>
+      <form
+        action=""
+        className="m-v500"
+        method="POST"
+        onSubmit={[Function]}
+      >
+        <input
+          name="crumb"
+          type="hidden"
+          value=""
+        />
+        <input
+          autoComplete="username"
+          name="username"
+          type="hidden"
+          value="CON01234"
+        />
+        <div
+          className="g g--r m-v200"
+        >
+          <div
+            className="g--6 m-b500"
+          >
+            <div
+              className="t--info m-b200"
+            >
+              New passwords must:
+            </div>
+            <ul
+              className="ul"
+              style={
+                Object {
+                  "lineHeight": 1.6,
+                }
+              }
+            >
+              <li
+                className=""
+              >
+                Be at least 10 characters long
+              </li>
+              <li
+                className=""
+              >
+                Use at least 3 of these:
+                <ul
+                  className="ul"
+                >
+                  <li
+                    className=""
+                  >
+                    A lowercase letter
+                  </li>
+                  <li
+                    className=""
+                  >
+                    An uppercase letter
+                  </li>
+                  <li
+                    className=""
+                  >
+                    A number
+                  </li>
+                  <li
+                    className=""
+                  >
+                    A special character
+                  </li>
+                </ul>
+              </li>
+              <li
+                className="css-5qhwje"
+              >
+                Not have spaces
+              </li>
+              <li
+                className="css-5qhwje"
+              >
+                Not be longer than 32 characters
+              </li>
+            </ul>
+            <div
+              className="t--subinfo m-v300 m-b200"
+            >
+              Don’t use personal info, like your name or address. Your new password will have to be different than your last 5 passwords.
+            </div>
+          </div>
+          <div
+            className="g--6"
+          >
+            <div
+              className="txt"
+              style={
+                Object {
+                  "marginBottom": "0.5rem",
+                }
+              }
+            >
+              <label
+                className="txt-l"
+                htmlFor="input-2099349523"
+                style={
+                  Object {
+                    "marginTop": 0,
+                  }
+                }
+              >
+                Current Password
+                <span
+                  aria-hidden="true"
+                  className="t--req"
+                >
+                   
+                  Required
+                </span>
+              </label>
+              <input
+                autoCapitalize="off"
+                autoComplete="current-password"
+                autoCorrect="off"
+                autoFocus={false}
+                className=" txt-f "
+                id="input-2099349523"
+                name="password"
+                onBlur={[Function]}
+                onChange={[Function]}
+                required={true}
+                spellCheck={false}
+                type="password"
+                value=""
+              />
+              <div
+                className="t--subinfo t--err m-t100"
+              >
+                 
+              </div>
+            </div>
+            <div
+              className="txt"
+              style={
+                Object {
+                  "marginBottom": "0.5rem",
+                }
+              }
+            >
+              <label
+                className="txt-l"
+                htmlFor="input-529028998"
+                style={
+                  Object {
+                    "marginTop": 0,
+                  }
+                }
+              >
+                New Password
+                <span
+                  aria-hidden="true"
+                  className="t--req"
+                >
+                   
+                  Required
+                </span>
+              </label>
+              <input
+                autoCapitalize="off"
+                autoComplete="new-password"
+                autoCorrect="off"
+                autoFocus={false}
+                className=" txt-f "
+                id="input-529028998"
+                name="newPassword"
+                onBlur={[Function]}
+                onChange={[Function]}
+                required={true}
+                spellCheck={false}
+                type="password"
+                value=""
+              />
+              <div
+                className="t--subinfo t--err m-t100"
+              >
+                 
+              </div>
+            </div>
+            <div
+              className="txt"
+              style={
+                Object {
+                  "marginBottom": "0.5rem",
+                }
+              }
+            >
+              <label
+                className="txt-l"
+                htmlFor="input-2475388040"
+                style={
+                  Object {
+                    "marginTop": 0,
+                  }
+                }
+              >
+                Confirm Password
+                <span
+                  aria-hidden="true"
+                  className="t--req"
+                >
+                   
+                  Required
+                </span>
+              </label>
+              <input
+                autoCapitalize="off"
+                autoComplete="new-password"
+                autoCorrect="off"
+                autoFocus={false}
+                className=" txt-f "
+                id="input-2475388040"
+                name="confirmPassword"
+                onBlur={[Function]}
+                onChange={[Function]}
+                required={true}
+                spellCheck={false}
+                type="password"
+                value=""
+              />
+              <div
+                className="t--subinfo t--err m-t100"
+              >
+                 
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          className="btn"
+          disabled={undefined}
+          type="submit"
+        >
+          Change Password
+        </button>
+      </form>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots ChangePasswordPage server errors 1`] = `
+Array [
+  <div
+    className="css-1gni7w7 p-a200"
+  >
+    <h1
+      className="css-e3scnp"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "inherit",
+          }
+        }
+      >
+        Access Boston
+      </a>
+    </h1>
+    <div
+      className="css-n9ftlz"
+    >
+      <span
+        style={
+          Object {
+            "marginRight": "1em",
+          }
+        }
+      >
+        CON01234
+      </span>
+      <form
+        action="/logout"
+        method="POST"
+      >
+        <input
+          name="crumb"
+          type="hidden"
+          value=""
+        />
+        <button
+          className="btn btn--sm btn--100"
+        >
+          Logout
+        </button>
+      </form>
+    </div>
+  </div>,
+  <div
+    className="mn css-1jubgvi"
+  >
+    <div
+      className="b b-c b-c--hsm"
+    >
+      <div
+        className="sh m-b300"
+      >
+        <h2
+          className="sh-title"
+        >
+          Change Password
+        </h2>
+      </div>
+      <form
+        action=""
+        className="m-v500"
+        method="POST"
+        onSubmit={[Function]}
+      >
+        <input
+          name="crumb"
+          type="hidden"
+          value=""
+        />
+        <input
+          autoComplete="username"
+          name="username"
+          type="hidden"
+          value="CON01234"
+        />
+        <div
+          className="g g--r m-v200"
+        >
+          <div
+            className="g--6 m-b500"
+          >
+            <div
+              className="t--info m-b200"
+            >
+              New passwords must:
+            </div>
+            <ul
+              className="ul"
+              style={
+                Object {
+                  "lineHeight": 1.6,
+                }
+              }
+            >
+              <li
+                className=""
+              >
+                Be at least 10 characters long
+              </li>
+              <li
+                className=""
+              >
+                Use at least 3 of these:
+                <ul
+                  className="ul"
+                >
+                  <li
+                    className=""
+                  >
+                    A lowercase letter
+                  </li>
+                  <li
+                    className=""
+                  >
+                    An uppercase letter
+                  </li>
+                  <li
+                    className=""
+                  >
+                    A number
+                  </li>
+                  <li
+                    className=""
+                  >
+                    A special character
+                  </li>
+                </ul>
+              </li>
+              <li
+                className="css-5qhwje"
+              >
+                Not have spaces
+              </li>
+              <li
+                className="css-5qhwje"
+              >
+                Not be longer than 32 characters
+              </li>
+            </ul>
+            <div
+              className="t--subinfo m-v300 m-b200"
+            >
+              Don’t use personal info, like your name or address. Your new password will have to be different than your last 5 passwords.
+            </div>
+          </div>
+          <div
+            className="g--6"
+          >
+            <div
+              className="txt"
+              style={
+                Object {
+                  "marginBottom": "0.5rem",
+                }
+              }
+            >
+              <label
+                className="txt-l"
+                htmlFor="input-2099349523"
+                style={
+                  Object {
+                    "marginTop": 0,
+                  }
+                }
+              >
+                Current Password
+                <span
+                  aria-hidden="true"
+                  className="t--req"
+                >
+                   
+                  Required
+                </span>
+              </label>
+              <input
+                autoCapitalize="off"
+                autoComplete="current-password"
+                autoCorrect="off"
+                autoFocus={false}
+                className=" txt-f txt-f--err"
+                id="input-2099349523"
+                name="password"
+                onBlur={[Function]}
+                onChange={[Function]}
+                required={true}
+                spellCheck={false}
+                type="password"
+                value=""
+              />
+              <div
+                className="t--subinfo t--err m-t100"
+              >
+                Current password is incorrect
+              </div>
+            </div>
+            <div
+              className="txt"
+              style={
+                Object {
+                  "marginBottom": "0.5rem",
+                }
+              }
+            >
+              <label
+                className="txt-l"
+                htmlFor="input-529028998"
+                style={
+                  Object {
+                    "marginTop": 0,
+                  }
+                }
+              >
+                New Password
+                <span
+                  aria-hidden="true"
+                  className="t--req"
+                >
+                   
+                  Required
+                </span>
+              </label>
+              <input
+                autoCapitalize="off"
+                autoComplete="new-password"
+                autoCorrect="off"
+                autoFocus={false}
+                className=" txt-f "
+                id="input-529028998"
+                name="newPassword"
+                onBlur={[Function]}
+                onChange={[Function]}
+                required={true}
+                spellCheck={false}
+                type="password"
+                value=""
+              />
+              <div
+                className="t--subinfo t--err m-t100"
+              >
+                 
+              </div>
+            </div>
+            <div
+              className="txt"
+              style={
+                Object {
+                  "marginBottom": "0.5rem",
+                }
+              }
+            >
+              <label
+                className="txt-l"
+                htmlFor="input-2475388040"
+                style={
+                  Object {
+                    "marginTop": 0,
+                  }
+                }
+              >
+                Confirm Password
+                <span
+                  aria-hidden="true"
+                  className="t--req"
+                >
+                   
+                  Required
+                </span>
+              </label>
+              <input
+                autoCapitalize="off"
+                autoComplete="new-password"
+                autoCorrect="off"
+                autoFocus={false}
+                className=" txt-f "
+                id="input-2475388040"
+                name="confirmPassword"
+                onBlur={[Function]}
+                onChange={[Function]}
+                required={true}
+                spellCheck={false}
+                type="password"
+                value=""
+              />
+              <div
+                className="t--subinfo t--err m-t100"
+              >
+                 
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          className="btn"
+          disabled={undefined}
+          type="submit"
+        >
+          Change Password
+        </button>
+      </form>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots ChangePasswordPage submitting 1`] = `
+Array [
+  <div
+    className="css-1gni7w7 p-a200"
+  >
+    <h1
+      className="css-e3scnp"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "inherit",
+          }
+        }
+      >
+        Access Boston
+      </a>
+    </h1>
+    <div
+      className="css-n9ftlz"
+    >
+      <span
+        style={
+          Object {
+            "marginRight": "1em",
+          }
+        }
+      >
+        CON01234
+      </span>
+      <form
+        action="/logout"
+        method="POST"
+      >
+        <input
+          name="crumb"
+          type="hidden"
+          value=""
+        />
+        <button
+          className="btn btn--sm btn--100"
+        >
+          Logout
+        </button>
+      </form>
+    </div>
+  </div>,
+  <div
+    className="mn css-1jubgvi"
+  >
+    <div
+      className="b b-c b-c--hsm"
+    >
+      <div
+        className="sh m-b300"
+      >
+        <h2
+          className="sh-title"
+        >
+          Change Password
+        </h2>
+      </div>
+      <form
+        action=""
+        className="m-v500"
+        method="POST"
+        onSubmit={[Function]}
+      >
+        <input
+          name="crumb"
+          type="hidden"
+          value=""
+        />
+        <input
+          autoComplete="username"
+          name="username"
+          type="hidden"
+          value="CON01234"
+        />
+        <div
+          className="g g--r m-v200"
+        >
+          <div
+            className="g--6 m-b500"
+          >
+            <div
+              className="t--info m-b200"
+            >
+              New passwords must:
+            </div>
+            <ul
+              className="ul"
+              style={
+                Object {
+                  "lineHeight": 1.6,
+                }
+              }
+            >
+              <li
+                className=""
+              >
+                Be at least 10 characters long
+              </li>
+              <li
+                className=""
+              >
+                Use at least 3 of these:
+                <ul
+                  className="ul"
+                >
+                  <li
+                    className=""
+                  >
+                    A lowercase letter
+                  </li>
+                  <li
+                    className=""
+                  >
+                    An uppercase letter
+                  </li>
+                  <li
+                    className=""
+                  >
+                    A number
+                  </li>
+                  <li
+                    className=""
+                  >
+                    A special character
+                  </li>
+                </ul>
+              </li>
+              <li
+                className="css-5qhwje"
+              >
+                Not have spaces
+              </li>
+              <li
+                className="css-5qhwje"
+              >
+                Not be longer than 32 characters
+              </li>
+            </ul>
+            <div
+              className="t--subinfo m-v300 m-b200"
+            >
+              Don’t use personal info, like your name or address. Your new password will have to be different than your last 5 passwords.
+            </div>
+          </div>
+          <div
+            className="g--6"
+          >
+            <div
+              className="txt"
+              style={
+                Object {
+                  "marginBottom": "0.5rem",
+                }
+              }
+            >
+              <label
+                className="txt-l"
+                htmlFor="input-2099349523"
+                style={
+                  Object {
+                    "marginTop": 0,
+                  }
+                }
+              >
+                Current Password
+                <span
+                  aria-hidden="true"
+                  className="t--req"
+                >
+                   
+                  Required
+                </span>
+              </label>
+              <input
+                autoCapitalize="off"
+                autoComplete="current-password"
+                autoCorrect="off"
+                autoFocus={false}
+                className=" txt-f "
+                id="input-2099349523"
+                name="password"
+                onBlur={[Function]}
+                onChange={[Function]}
+                required={true}
+                spellCheck={false}
+                type="password"
+                value=""
+              />
+              <div
+                className="t--subinfo t--err m-t100"
+              >
+                 
+              </div>
+            </div>
+            <div
+              className="txt"
+              style={
+                Object {
+                  "marginBottom": "0.5rem",
+                }
+              }
+            >
+              <label
+                className="txt-l"
+                htmlFor="input-529028998"
+                style={
+                  Object {
+                    "marginTop": 0,
+                  }
+                }
+              >
+                New Password
+                <span
+                  aria-hidden="true"
+                  className="t--req"
+                >
+                   
+                  Required
+                </span>
+              </label>
+              <input
+                autoCapitalize="off"
+                autoComplete="new-password"
+                autoCorrect="off"
+                autoFocus={false}
+                className=" txt-f "
+                id="input-529028998"
+                name="newPassword"
+                onBlur={[Function]}
+                onChange={[Function]}
+                required={true}
+                spellCheck={false}
+                type="password"
+                value=""
+              />
+              <div
+                className="t--subinfo t--err m-t100"
+              >
+                 
+              </div>
+            </div>
+            <div
+              className="txt"
+              style={
+                Object {
+                  "marginBottom": "0.5rem",
+                }
+              }
+            >
+              <label
+                className="txt-l"
+                htmlFor="input-2475388040"
+                style={
+                  Object {
+                    "marginTop": 0,
+                  }
+                }
+              >
+                Confirm Password
+                <span
+                  aria-hidden="true"
+                  className="t--req"
+                >
+                   
+                  Required
+                </span>
+              </label>
+              <input
+                autoCapitalize="off"
+                autoComplete="new-password"
+                autoCorrect="off"
+                autoFocus={false}
+                className=" txt-f "
+                id="input-2475388040"
+                name="confirmPassword"
+                onBlur={[Function]}
+                onChange={[Function]}
+                required={true}
+                spellCheck={false}
+                type="password"
+                value=""
+              />
+              <div
+                className="t--subinfo t--err m-t100"
+              >
+                 
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          className="btn"
+          disabled={undefined}
+          type="submit"
+        >
+          Change Password
+        </button>
+      </form>
+    </div>
+  </div>,
+  <div
+    className="md"
+  >
+    <div
+      className="md-c br br-t400 css-1y2scv5"
+    >
+      <div
+        className="md-b p-a300"
+      >
+        <div
+          className="t--intro"
+        >
+          Saving your new password…
+        </div>
+        <div
+          className="t--info m-t300"
+        >
+          Please be patient and don’t refresh your browser. This might take a bit.
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots ForgotPasswordPage default 1`] = `
+Array [
+  <div
+    className="css-1gni7w7 p-a200"
+  >
+    <h1
+      className="css-e3scnp"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "inherit",
+          }
+        }
+      >
+        Access Boston
+      </a>
+    </h1>
+  </div>,
+  <div
+    className="mn css-1jubgvi"
+  >
+    <div
+      className="b b-c b-c--hsm"
+    >
+      <div
+        className="sh m-b300"
+      >
+        <h2
+          className="sh-title"
+        >
+          Forgot Password
+        </h2>
+      </div>
+      <form
+        action=""
+        className="m-v500"
+        method="POST"
+        onSubmit={[Function]}
+      >
+        <input
+          name="crumb"
+          type="hidden"
+          value=""
+        />
+        <div
+          className="g g--r m-v200"
+        >
+          <div
+            className="g--6 m-b500"
+          >
+            <div
+              className="t--info m-b200"
+            >
+              New passwords must:
+            </div>
+            <ul
+              className="ul"
+              style={
+                Object {
+                  "lineHeight": 1.6,
+                }
+              }
+            >
+              <li
+                className=""
+              >
+                Be at least 10 characters long
+              </li>
+              <li
+                className=""
+              >
+                Use at least 3 of these:
+                <ul
+                  className="ul"
+                >
+                  <li
+                    className=""
+                  >
+                    A lowercase letter
+                  </li>
+                  <li
+                    className=""
+                  >
+                    An uppercase letter
+                  </li>
+                  <li
+                    className=""
+                  >
+                    A number
+                  </li>
+                  <li
+                    className=""
+                  >
+                    A special character
+                  </li>
+                </ul>
+              </li>
+              <li
+                className="css-5qhwje"
+              >
+                Not have spaces
+              </li>
+              <li
+                className="css-5qhwje"
+              >
+                Not be longer than 32 characters
+              </li>
+            </ul>
+            <div
+              className="t--subinfo m-v300 m-b200"
+            >
+              Don’t use personal info, like your name or address. Your new password will have to be different than your last 5 passwords.
+            </div>
+          </div>
+          <div
+            className="g--6"
+          >
+            <div
+              className="txt"
+              style={
+                Object {
+                  "marginBottom": "0.5rem",
+                }
+              }
+            >
+              <label
+                className="txt-l"
+                htmlFor="input-529028998"
+                style={
+                  Object {
+                    "marginTop": 0,
+                  }
+                }
+              >
+                New Password
+                <span
+                  aria-hidden="true"
+                  className="t--req"
+                >
+                   
+                  Required
+                </span>
+              </label>
+              <input
+                autoCapitalize="off"
+                autoComplete="new-password"
+                autoCorrect="off"
+                autoFocus={false}
+                className=" txt-f "
+                id="input-529028998"
+                name="newPassword"
+                onBlur={[Function]}
+                onChange={[Function]}
+                required={true}
+                spellCheck={false}
+                type="password"
+                value=""
+              />
+              <div
+                className="t--subinfo t--err m-t100"
+              >
+                 
+              </div>
+            </div>
+            <div
+              className="txt"
+              style={
+                Object {
+                  "marginBottom": "0.5rem",
+                }
+              }
+            >
+              <label
+                className="txt-l"
+                htmlFor="input-2475388040"
+                style={
+                  Object {
+                    "marginTop": 0,
+                  }
+                }
+              >
+                Confirm Password
+                <span
+                  aria-hidden="true"
+                  className="t--req"
+                >
+                   
+                  Required
+                </span>
+              </label>
+              <input
+                autoCapitalize="off"
+                autoComplete="new-password"
+                autoCorrect="off"
+                autoFocus={false}
+                className=" txt-f "
+                id="input-2475388040"
+                name="confirmPassword"
+                onBlur={[Function]}
+                onChange={[Function]}
+                required={true}
+                spellCheck={false}
+                type="password"
+                value=""
+              />
+              <div
+                className="t--subinfo t--err m-t100"
+              >
+                 
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          className="btn"
+          disabled={undefined}
+          type="submit"
+        >
+          Reset Password
+        </button>
+      </form>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots IndexPage change password success 1`] = `
+Array [
+  <div
+    className="css-1gni7w7 p-a200"
+  >
+    <h1
+      className="css-e3scnp"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "inherit",
+          }
+        }
+      >
+        Access Boston
+      </a>
+    </h1>
+    <div
+      className="css-n9ftlz"
+    >
+      <span
+        style={
+          Object {
+            "marginRight": "1em",
+          }
+        }
+      >
+        CON01234
+      </span>
+      <form
+        action="/logout"
+        method="POST"
+      >
+        <input
+          name="crumb"
+          type="hidden"
+          value=""
+        />
+        <button
+          className="btn btn--sm btn--100"
+        >
+          Logout
+        </button>
+      </form>
+    </div>
+  </div>,
+  <div
+    className="mn css-1jubgvi"
+  >
+    <div
+      className="b--g"
+    >
+      <div
+        className="t--intro p-a300 m-b300"
+      >
+        Your password has been changed!
+      </div>
+    </div>
+    <div
+      className="b b-c"
+    >
+      <div
+        className="m-b500"
+      >
+        <div
+          className="sh m-b300"
+        >
+          <h2
+            className="sh-title"
+          >
+            Financial Software
+          </h2>
+        </div>
+        <div
+          className="g"
+        >
+          <a
+            className="lwi m-t200 g--3 g--3--sl"
+            href="#"
+            onClick={[Function]}
+          >
+            <span
+              className="lwi-ic"
+              style={
+                Object {
+                  "width": "auto",
+                }
+              }
+            >
+              <img
+                alt=""
+                className="lwi-i"
+                src="https://patterns.boston.gov/images/b-dark.svg"
+              />
+            </span>
+            <span
+              className="lwi-t"
+            >
+              BAIS FN
+            </span>
+          </a>
+          <a
+            className="lwi m-t200 g--3 g--3--sl"
+            href="#"
+            onClick={[Function]}
+          >
+            <span
+              className="lwi-ic"
+              style={
+                Object {
+                  "width": "auto",
+                }
+              }
+            >
+              <img
+                alt=""
+                className="lwi-i"
+                src="https://patterns.boston.gov/images/b-dark.svg"
+              />
+            </span>
+            <span
+              className="lwi-t"
+            >
+              BAIS HCM
+            </span>
+          </a>
+        </div>
+      </div>
+      <div
+        className="g"
+      >
+        <div
+          className="m-b500 g--6"
+        >
+          <div
+            className="sh m-b300"
+          >
+            <h2
+              className="sh-title"
+            >
+              Employee Tools
+            </h2>
+          </div>
+          <div
+            className="t--subinfo p-a200 m-v300"
+          >
+            Is there an app that you need access to that’s not shown here? Fill out the
+             
+            <a
+              href="#"
+            >
+              request access form
+            </a>
+            .
+          </div>
+          <ul
+            className="ul m-v500"
+          >
+            <li>
+              <a
+                className="p-a300 css-v7ibj3"
+                href="#"
+                onClick={[Function]}
+              >
+                <div
+                  className="t--info"
+                  style={
+                    Object {
+                      "color": "inherit",
+                    }
+                  }
+                >
+                  The Hub
+                </div>
+                <div
+                  style={
+                    Object {
+                      "color": "#091f2f",
+                    }
+                  }
+                >
+                  Employee directory and other information for employees.
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                className="p-a300 css-v7ibj3"
+                href="#"
+                onClick={[Function]}
+              >
+                <div
+                  className="t--info"
+                  style={
+                    Object {
+                      "color": "inherit",
+                    }
+                  }
+                >
+                  Building Maintenance Form
+                </div>
+                <div
+                  style={
+                    Object {
+                      "color": "#091f2f",
+                    }
+                  }
+                >
+                  Report a maintenance problem with a City building.
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                className="p-a300 css-v7ibj3"
+                href="#"
+                onClick={[Function]}
+              >
+                <div
+                  className="t--info"
+                  style={
+                    Object {
+                      "color": "inherit",
+                    }
+                  }
+                >
+                  ESS
+                </div>
+                <div
+                  style={
+                    Object {
+                      "color": "#091f2f",
+                    }
+                  }
+                >
+                  
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                className="p-a300 css-v7ibj3"
+                href="#"
+                onClick={[Function]}
+              >
+                <div
+                  className="t--info"
+                  style={
+                    Object {
+                      "color": "inherit",
+                    }
+                  }
+                >
+                  Employee Connect
+                </div>
+                <div
+                  style={
+                    Object {
+                      "color": "#091f2f",
+                    }
+                  }
+                >
+                  
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                className="p-a300 css-v7ibj3"
+                href="#"
+                onClick={[Function]}
+              >
+                <div
+                  className="t--info"
+                  style={
+                    Object {
+                      "color": "inherit",
+                    }
+                  }
+                >
+                  My Learning Plan
+                </div>
+                <div
+                  style={
+                    Object {
+                      "color": "#091f2f",
+                    }
+                  }
+                >
+                  
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots IndexPage default 1`] = `
+Array [
+  <div
+    className="css-1gni7w7 p-a200"
+  >
+    <h1
+      className="css-e3scnp"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "inherit",
+          }
+        }
+      >
+        Access Boston
+      </a>
+    </h1>
+    <div
+      className="css-n9ftlz"
+    >
+      <span
+        style={
+          Object {
+            "marginRight": "1em",
+          }
+        }
+      >
+        CON01234
+      </span>
+      <form
+        action="/logout"
+        method="POST"
+      >
+        <input
+          name="crumb"
+          type="hidden"
+          value=""
+        />
+        <button
+          className="btn btn--sm btn--100"
+        >
+          Logout
+        </button>
+      </form>
+    </div>
+  </div>,
+  <div
+    className="mn css-1jubgvi"
+  >
+    <div
+      className="b b-c"
+    >
+      <div
+        className="m-b500"
+      >
+        <div
+          className="sh m-b300"
+        >
+          <h2
+            className="sh-title"
+          >
+            Financial Software
+          </h2>
+        </div>
+        <div
+          className="g"
+        >
+          <a
+            className="lwi m-t200 g--3 g--3--sl"
+            href="#"
+            onClick={[Function]}
+          >
+            <span
+              className="lwi-ic"
+              style={
+                Object {
+                  "width": "auto",
+                }
+              }
+            >
+              <img
+                alt=""
+                className="lwi-i"
+                src="https://patterns.boston.gov/images/b-dark.svg"
+              />
+            </span>
+            <span
+              className="lwi-t"
+            >
+              BAIS FN
+            </span>
+          </a>
+          <a
+            className="lwi m-t200 g--3 g--3--sl"
+            href="#"
+            onClick={[Function]}
+          >
+            <span
+              className="lwi-ic"
+              style={
+                Object {
+                  "width": "auto",
+                }
+              }
+            >
+              <img
+                alt=""
+                className="lwi-i"
+                src="https://patterns.boston.gov/images/b-dark.svg"
+              />
+            </span>
+            <span
+              className="lwi-t"
+            >
+              BAIS HCM
+            </span>
+          </a>
+        </div>
+      </div>
+      <div
+        className="g"
+      >
+        <div
+          className="m-b500 g--6"
+        >
+          <div
+            className="sh m-b300"
+          >
+            <h2
+              className="sh-title"
+            >
+              Employee Tools
+            </h2>
+          </div>
+          <div
+            className="t--subinfo p-a200 m-v300"
+          >
+            Is there an app that you need access to that’s not shown here? Fill out the
+             
+            <a
+              href="#"
+            >
+              request access form
+            </a>
+            .
+          </div>
+          <ul
+            className="ul m-v500"
+          >
+            <li>
+              <a
+                className="p-a300 css-v7ibj3"
+                href="#"
+                onClick={[Function]}
+              >
+                <div
+                  className="t--info"
+                  style={
+                    Object {
+                      "color": "inherit",
+                    }
+                  }
+                >
+                  The Hub
+                </div>
+                <div
+                  style={
+                    Object {
+                      "color": "#091f2f",
+                    }
+                  }
+                >
+                  Employee directory and other information for employees.
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                className="p-a300 css-v7ibj3"
+                href="#"
+                onClick={[Function]}
+              >
+                <div
+                  className="t--info"
+                  style={
+                    Object {
+                      "color": "inherit",
+                    }
+                  }
+                >
+                  Building Maintenance Form
+                </div>
+                <div
+                  style={
+                    Object {
+                      "color": "#091f2f",
+                    }
+                  }
+                >
+                  Report a maintenance problem with a City building.
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                className="p-a300 css-v7ibj3"
+                href="#"
+                onClick={[Function]}
+              >
+                <div
+                  className="t--info"
+                  style={
+                    Object {
+                      "color": "inherit",
+                    }
+                  }
+                >
+                  ESS
+                </div>
+                <div
+                  style={
+                    Object {
+                      "color": "#091f2f",
+                    }
+                  }
+                >
+                  
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                className="p-a300 css-v7ibj3"
+                href="#"
+                onClick={[Function]}
+              >
+                <div
+                  className="t--info"
+                  style={
+                    Object {
+                      "color": "inherit",
+                    }
+                  }
+                >
+                  Employee Connect
+                </div>
+                <div
+                  style={
+                    Object {
+                      "color": "#091f2f",
+                    }
+                  }
+                >
+                  
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                className="p-a300 css-v7ibj3"
+                href="#"
+                onClick={[Function]}
+              >
+                <div
+                  className="t--info"
+                  style={
+                    Object {
+                      "color": "inherit",
+                    }
+                  }
+                >
+                  My Learning Plan
+                </div>
+                <div
+                  style={
+                    Object {
+                      "color": "#091f2f",
+                    }
+                  }
+                >
+                  
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots PasswordPolicy blank 1`] = `
+Array [
+  <div
+    className="t--info m-b200"
+  >
+    New passwords must:
+  </div>,
+  <ul
+    className="ul"
+    style={
+      Object {
+        "lineHeight": 1.6,
+      }
+    }
+  >
+    <li
+      className=""
+    >
+      Be at least 10 characters long
+    </li>
+    <li
+      className=""
+    >
+      Use at least 3 of these:
+      <ul
+        className="ul"
+      >
+        <li
+          className=""
+        >
+          A lowercase letter
+        </li>
+        <li
+          className=""
+        >
+          An uppercase letter
+        </li>
+        <li
+          className=""
+        >
+          A number
+        </li>
+        <li
+          className=""
+        >
+          A special character
+        </li>
+      </ul>
+    </li>
+    <li
+      className="css-5qhwje"
+    >
+      Not have spaces
+    </li>
+    <li
+      className="css-5qhwje"
+    >
+      Not be longer than 32 characters
+    </li>
+  </ul>,
+  <div
+    className="t--subinfo m-v300 m-b200"
+  >
+    Don’t use personal info, like your name or address. Your new password will have to be different than your last 5 passwords.
+  </div>,
+]
+`;
+
+exports[`Storyshots PasswordPolicy complex enough 1`] = `
+Array [
+  <div
+    className="t--info m-b200"
+  >
+    New passwords must:
+  </div>,
+  <ul
+    className="ul"
+    style={
+      Object {
+        "lineHeight": 1.6,
+      }
+    }
+  >
+    <li
+      className=""
+    >
+      Be at least 10 characters long
+    </li>
+    <li
+      className="css-5qhwje"
+    >
+      Use at least 3 of these:
+      <ul
+        className="ul"
+      >
+        <li
+          className=""
+        >
+          A lowercase letter
+        </li>
+        <li
+          className="css-5qhwje"
+        >
+          An uppercase letter
+        </li>
+        <li
+          className="css-5qhwje"
+        >
+          A number
+        </li>
+        <li
+          className="css-5qhwje"
+        >
+          A special character
+        </li>
+      </ul>
+    </li>
+    <li
+      className="css-5qhwje"
+    >
+      Not have spaces
+    </li>
+    <li
+      className="css-5qhwje"
+    >
+      Not be longer than 32 characters
+    </li>
+  </ul>,
+  <div
+    className="t--subinfo m-v300 m-b200"
+  >
+    Don’t use personal info, like your name or address. Your new password will have to be different than your last 5 passwords.
+  </div>,
+]
+`;
+
+exports[`Storyshots PasswordPolicy failed are errors 1`] = `
+Array [
+  <div
+    className="t--info m-b200"
+  >
+    New passwords must:
+  </div>,
+  <ul
+    className="ul"
+    style={
+      Object {
+        "lineHeight": 1.6,
+      }
+    }
+  >
+    <li
+      className="css-1ckn7fc"
+    >
+      Be at least 10 characters long
+    </li>
+    <li
+      className="css-1ckn7fc"
+    >
+      Use at least 3 of these:
+      <ul
+        className="ul"
+      >
+        <li
+          className="css-5qhwje"
+        >
+          A lowercase letter
+        </li>
+        <li
+          className=""
+        >
+          An uppercase letter
+        </li>
+        <li
+          className=""
+        >
+          A number
+        </li>
+        <li
+          className=""
+        >
+          A special character
+        </li>
+      </ul>
+    </li>
+    <li
+      className="css-5qhwje"
+    >
+      Not have spaces
+    </li>
+    <li
+      className="css-5qhwje"
+    >
+      Not be longer than 32 characters
+    </li>
+  </ul>,
+  <div
+    className="t--subinfo m-v300 m-b200"
+  >
+    Don’t use personal info, like your name or address. Your new password will have to be different than your last 5 passwords.
+  </div>,
+]
+`;
+
+exports[`Storyshots PasswordPolicy long enough 1`] = `
+Array [
+  <div
+    className="t--info m-b200"
+  >
+    New passwords must:
+  </div>,
+  <ul
+    className="ul"
+    style={
+      Object {
+        "lineHeight": 1.6,
+      }
+    }
+  >
+    <li
+      className="css-5qhwje"
+    >
+      Be at least 10 characters long
+    </li>
+    <li
+      className=""
+    >
+      Use at least 3 of these:
+      <ul
+        className="ul"
+      >
+        <li
+          className=""
+        >
+          A lowercase letter
+        </li>
+        <li
+          className=""
+        >
+          An uppercase letter
+        </li>
+        <li
+          className="css-5qhwje"
+        >
+          A number
+        </li>
+        <li
+          className=""
+        >
+          A special character
+        </li>
+      </ul>
+    </li>
+    <li
+      className="css-5qhwje"
+    >
+      Not have spaces
+    </li>
+    <li
+      className="css-5qhwje"
+    >
+      Not be longer than 32 characters
+    </li>
+  </ul>,
+  <div
+    className="t--subinfo m-v300 m-b200"
+  >
+    Don’t use personal info, like your name or address. Your new password will have to be different than your last 5 passwords.
+  </div>,
+]
+`;
+
+exports[`Storyshots PasswordPolicy spaces error 1`] = `
+Array [
+  <div
+    className="t--info m-b200"
+  >
+    New passwords must:
+  </div>,
+  <ul
+    className="ul"
+    style={
+      Object {
+        "lineHeight": 1.6,
+      }
+    }
+  >
+    <li
+      className=""
+    >
+      Be at least 10 characters long
+    </li>
+    <li
+      className=""
+    >
+      Use at least 3 of these:
+      <ul
+        className="ul"
+      >
+        <li
+          className="css-5qhwje"
+        >
+          A lowercase letter
+        </li>
+        <li
+          className=""
+        >
+          An uppercase letter
+        </li>
+        <li
+          className=""
+        >
+          A number
+        </li>
+        <li
+          className=""
+        >
+          A special character
+        </li>
+      </ul>
+    </li>
+    <li
+      className="css-1ckn7fc"
+    >
+      Not have spaces
+    </li>
+    <li
+      className="css-5qhwje"
+    >
+      Not be longer than 32 characters
+    </li>
+  </ul>,
+  <div
+    className="t--subinfo m-v300 m-b200"
+  >
+    Don’t use personal info, like your name or address. Your new password will have to be different than your last 5 passwords.
+  </div>,
+]
+`;
+
+exports[`Storyshots TextInput variants 1`] = `
+Array [
+  <div
+    className="txt"
+    style={
+      Object {
+        "marginBottom": "0.5rem",
+      }
+    }
+  >
+    <label
+      className="txt-l"
+      htmlFor="input-240483872"
+      style={
+        Object {
+          "marginTop": 0,
+        }
+      }
+    >
+      Normal Input
+    </label>
+    <input
+      className=" txt-f "
+      id="input-240483872"
+      type="text"
+    />
+    <div
+      className="t--subinfo t--err m-t100"
+    >
+       
+    </div>
+  </div>,
+  <div
+    className="txt"
+    style={
+      Object {
+        "marginBottom": "0.5rem",
+      }
+    }
+  >
+    <label
+      className="txt-l"
+      htmlFor="input-1357588218"
+      style={
+        Object {
+          "marginTop": 0,
+        }
+      }
+    >
+      Required Input
+      <span
+        aria-hidden="true"
+        className="t--req"
+      >
+         
+        Required
+      </span>
+    </label>
+    <input
+      className=" txt-f "
+      id="input-1357588218"
+      required={true}
+      type="text"
+    />
+    <div
+      className="t--subinfo t--err m-t100"
+    >
+       
+    </div>
+  </div>,
+  <div
+    className="txt"
+    style={
+      Object {
+        "marginBottom": "0.5rem",
+      }
+    }
+  >
+    <label
+      className="txt-l"
+      htmlFor="input-423803610"
+      style={
+        Object {
+          "marginTop": 0,
+        }
+      }
+    >
+      Password
+    </label>
+    <input
+      className=" txt-f "
+      id="input-423803610"
+      type="password"
+      value="password"
+    />
+    <div
+      className="t--subinfo t--err m-t100"
+    >
+       
+    </div>
+  </div>,
+  <div
+    className="txt"
+    style={
+      Object {
+        "marginBottom": "0.5rem",
+      }
+    }
+  >
+    <label
+      className="txt-l"
+      htmlFor="input-2348632648"
+      style={
+        Object {
+          "marginTop": 0,
+        }
+      }
+    >
+      String error
+    </label>
+    <input
+      className=" txt-f txt-f--err"
+      id="input-2348632648"
+      type="text"
+    />
+    <div
+      className="t--subinfo t--err m-t100"
+    >
+      Value is not correct
+    </div>
+  </div>,
+  <div
+    className="txt"
+    style={
+      Object {
+        "marginBottom": "0.5rem",
+      }
+    }
+  >
+    <label
+      className="txt-l"
+      htmlFor="input-3077581017"
+      style={
+        Object {
+          "marginTop": 0,
+        }
+      }
+    >
+      Boolean error
+    </label>
+    <input
+      className=" txt-f txt-f--err"
+      id="input-3077581017"
+      type="text"
+    />
+    <div
+      className="t--subinfo t--err m-t100"
+    >
+       
+    </div>
+  </div>,
+]
 `;
