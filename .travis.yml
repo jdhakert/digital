@@ -32,9 +32,9 @@ jobs:
     - lerna run --stream --since $TRAVIS_PULL_REQUEST_SHA^1 --include-filtered-dependencies
       prepare
     script: yarn run test:since $TRAVIS_PULL_REQUEST_SHA^1
-    after_failure: 
-    # Uploads any screenshots from TestCafe to our bucket so we can debug
-    - "travis-artifacts upload --path services-js/access-boston/screenshots --target-path travis/screenshots/$TRAVIS_BUILD_ID/$TRAVIS_JOB_ID"
+    after_failure:
+    - travis-artifacts upload --path services-js/access-boston/screenshots --target-path
+      travis/screenshots/$TRAVIS_BUILD_ID/$TRAVIS_JOB_ID
   - stage: deploy
     install:
     - yarn install --frozen-lockfile --ignore-scripts
@@ -49,5 +49,4 @@ jobs:
         all_branches: true
 notifications:
   slack:
-    rooms:
-      secure: AC039Rc34u59zEiO7zmPyzd4ii9QnL0Xf6o0YGQf37GJlJCTv712I4aOFZRWIkTLZfjH3vURNvwTDoTpx6PgAMu1bIcet1LGjsoYcjN7xXqPfqi7peXANEnVZzlUpGRkP8Y6TV3nYaE0g0gpuEqORm0Bgs7zgeCNiWNT35vPtvzc9U8E/Zx4nzYEzXJr1SWwBtM/E1bhGaIKzy338AJj9ZJOnxV3Qng7LYIOmkuxwTqLfJWNBd8Wj2pAP/HQ4XfFtcgEqfYwhtjGNYfLbDVJjdiul3UJ9/C4gHkfGEhhsfgyZjqJTRsZCZABWPsqZ5a+7diNXjUOuVyG2HwBIy2/9L6UnsA1y79HOVQ8k0tj7z8iXD36OSvv7bCCVyC7ymz7ViLld/moKYHCfHTNd/g6ES1eDbNiybg6gx3eIvgDIey0GNl5kjw8vIMb/3SNMSm/zZCrv4/DUZgei8xYjsEM6j1VUVVwhn6E6yOuMRgAuXUPO/w61w+lf+rgQZNfBS8+K/lZ0OQdb1eHWmUKL4EtqFuOpsrBbt0PCT3Rygb/O+eUSba7BcvUDDoYuah2rQmylR4kPQNYmLZgukwta+CZrLb988zR/vsGV6THtnluF3/kZm9v0SMXGqZQNgILwaV4ie0WsoAArWFd2A2CtKmVx4q9LYwNylb0pDr93zfDaN8=
+    secure: C2NqstjMXDKohtsPLOuFkGs5xFCuuq4msMeH42XxvdswUMP1eXWadB++gsId8eEg1YcYmJ70o0cG0DUwWBXLOgvlP36WPIo4iXPTGxkdpV+l89llXgX2JrR7l9l7V91ks8njDbkAr0DxIk8P5Mj6koQ8luyQBc0y2yNBJxXcNx6rCEcGOKQpu+gMv6gv76PBzNrZBmY0m+Z/g9RrFfFPVWGQcdSZ2EuX/P3G79mI6I8xdRdvp5+H5NIwFCuBjt/s+1fvi68UxGdllKCihw77fAp06W0CQ47l2xxVIiH3cR80B5vfr8TL3xciT+vD/QhBIOR2Ue9aeVMZNxLF3S+169rwp2Hg5DRrF1H8184xWYOdJcS1SzlTfqiVso4vsUpSQs6aZ7NepD96kuC5nmpcZbqXJsBbSmSbyRfCVQP+NMxJBaeJfxbK66jBGz01PO+F+uZc9Ciwd2aZoo9qv+JobHQYjRT6/rQNyhQOos/W1QUEfPXH4stGWUKf5YQZPKVbLefYiw6d9ThdTndzHntwwwxg9pLFyhSqPOTCDGnP/Gu2v0sTW59FxTenLFnQX9Myo70RZS48nURLbkjxx5/yuPAs2lXwQeJbjpj7EySGZtpBvEcfkFPKnmla1sTDkTU8YnZzg5hQ2Tatt7PzKZxR6vgvmALeOZIDkDvOLUBk2OM=
